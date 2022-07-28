@@ -1,0 +1,8 @@
+<div class="call">
+  <app-button [name]="'Вызов'" (click) ="startTimer($event)" class="btn"></app-button>
+  <div>
+    <p>{{minute}}</p>:
+    <p>{{sec}}</p>
+  </div>
+  <app-button [name]="'Завершить'" class="btn"></app-button>
+</div>
