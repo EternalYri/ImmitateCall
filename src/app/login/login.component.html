@@ -1,7 +1,28 @@
-<div>
+<!-- <div>
   <h3>Login:</h3>
   <app-input [type]="'Login'"></app-input>
   <h3>Password:</h3>
   <app-input [type]="'Password'" [text]="'password'"></app-input>
   <app-button [name]="'Войти'" [routerLink]="['/main']"></app-button>
+</div> -->
+<form [formGroup]="form">
+  <h2>Вход</h2>
+  <div class="form__control">
+    <label for="login">Login:</label>
+    <input type="text" formControlName="login">
+    <div class="validation">
+      <small>{{form.errors}}</small>
+    </div>
+  </div>
+  <div class="form__control">
+      <label for="password">Password:</label>
+    <input type="password" formControlName="password">
+    <div class="validation">
+      <small>{{form.errors}}</small>
+    </div>
+  </div>
+  <button type="submit" [routerLink]="['/main']" (click)="onLogin()">Войти</button>
+</form>
+<div>
+  {{form.value | json}}
 </div>

@@ -10,6 +10,9 @@ export class CallComponent implements OnInit {
   minute = 0;
 
   startTimer(event: any) {
+    navigator.mediaDevices.getUserMedia({ audio: true})
+    .then(stream => {
+        const mediaRecorder = new MediaRecorder(stream)});
   let count = setInterval(()=>{
     ++this.sec
     if (this.sec>= 60) {
