@@ -1,4 +1,6 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { CallService } from '../shared/call.service';
 
 @Component({
   selector: 'app-call',
@@ -8,11 +10,17 @@ import { Component, OnInit } from '@angular/core';
 export class CallComponent implements OnInit {
   sec = 0;
   minute = 0;
+  media: any;
 
   startTimer(event: any) {
+    this.call.startDate(new Date())
+
     navigator.mediaDevices.getUserMedia({ audio: true})
     .then(stream => {
-        const mediaRecorder = new MediaRecorder(stream)});
+        this.media = new MediaRecorder(stream)
+        console.log(this.media)
+      })
+
   let count = setInterval(()=>{
     ++this.sec
     if (this.sec>= 60) {
@@ -21,7 +29,12 @@ export class CallComponent implements OnInit {
     }
   }, 1000);
   }
-  constructor() { }
+
+  onEnd() {
+
+    this.call.endDate(new Date())
+  }
+  constructor(private call: CallService) { }
 
   ngOnInit(): void {
   }
