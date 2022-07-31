@@ -13,7 +13,10 @@ export class CallComponent implements OnInit {
   media: any;
 
   startTimer(event: any) {
-    this.call.startDate(new Date())
+    let all = new Date();
+    let res = [all.getHours(), all.getMinutes(), all.getSeconds()]. join(":")
+    this.call.startCall(res)
+
 
     navigator.mediaDevices.getUserMedia({ audio: true})
     .then(stream => {
@@ -31,8 +34,11 @@ export class CallComponent implements OnInit {
   }
 
   onEnd() {
-
-    this.call.endDate(new Date())
+    this.call.timeCall(document.getElementsByClassName('show__time')[0].textContent);
+    let all = new Date()
+    let res = [all.getHours(), all.getMinutes(), all.getSeconds()]. join(":")
+    this.call.endCall(res)
+    this.media.endStream()
   }
   constructor(private call: CallService) { }
 

@@ -1,8 +1,5 @@
-.navigate{
+.main{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  & > h3{
-    padding-left: 40px;
-  }
 }

@@ -6,15 +6,20 @@ import { Injectable } from "@angular/core";
 
 export class CallService{
 
-  memoryCall = []
-  startDate(date: any) {
-    const Date = date;
-    console.log(Date)
+  startDate: any;
+  endDate: any;
+  time: any;
+
+  startCall(date: any) {
+    this.startDate = date;
   }
 
-  endDate(date: any) {
-    const EndDate = date
-    console.log(EndDate)
+  endCall(date: any) {
+    this.endDate = date;
+  }
+
+  timeCall(date: any) {
+    this.time = date;
   }
 
 }
