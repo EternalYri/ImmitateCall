@@ -11,6 +11,7 @@ export class CallComponent implements OnInit {
   sec = 0;
   minute = 0;
   media: any;
+  count: any;
 
   startTimer(event: any) {
     let all = new Date();
@@ -18,13 +19,13 @@ export class CallComponent implements OnInit {
     this.call.startCall(res)
 
 
-    navigator.mediaDevices.getUserMedia({ audio: true})
-    .then(stream => {
-        this.media = new MediaRecorder(stream)
-        console.log(this.media)
-      })
+    // navigator.mediaDevices.getUserMedia({ audio: true})
+    // .then(stream => {
+    //     this.media = new MediaRecorder(stream)
+    //     console.log(this.media)
+    //   })
 
-  let count = setInterval(()=>{
+  this.count = setInterval(()=>{
     ++this.sec
     if (this.sec>= 60) {
       this.sec = 0;
@@ -38,7 +39,7 @@ export class CallComponent implements OnInit {
     let all = new Date()
     let res = [all.getHours(), all.getMinutes(), all.getSeconds()]. join(":")
     this.call.endCall(res)
-    this.media.endStream()
+    clearInterval(this.count)
   }
   constructor(private call: CallService) { }
 
