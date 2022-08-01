@@ -4,9 +4,17 @@
   flex-direction: column;
   justify-content: center;
   .todo{
+  width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  border: 2px solid grey;
+  margin-top: 24px;
+}
+.img{
+  width: 24px;
+  height: 24px;
+  background-image: url(../multiply.png);
 }
 }
 

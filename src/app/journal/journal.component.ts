@@ -19,19 +19,19 @@ export class JournalComponent implements OnInit {
       arr[1] = this.show.time;
       arr[2] = this.show.endDate;
       this.memoryArr.push(arr)
-      console.log(this.memoryArr)
       localStorage.setItem('journal', JSON.stringify(this.memoryArr))
     }
 
-    onClear() {
-      localStorage.removeItem('journal')
+    onClear(id: number) {
+      this.memoryArr.splice(id, 1)
+      localStorage.setItem('journal', this.memoryArr)
     }
 
   ngOnInit() {
     let inject: any = localStorage.getItem('journal')
     if (JSON.parse(inject) !==null) {
       this.memoryArr = JSON.parse(inject);
-    } else this.memoryArr = []
+    } else this.memoryArr = [];
 
   }
 
