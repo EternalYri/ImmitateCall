@@ -1,13 +1,12 @@
 <div class="main">
   <h1>Журнал Вызовов</h1>
-  <app-button [name]="'Показать журнал'" (click)="onShow()"></app-button>
-  <!-- <app-button [name]="'Отчистить журнал'" (click)="onClear(i)"></app-button> -->
+  <button (click)="onShow($event)">Показать журнал</button>
   <div class="show">
     <div *ngFor="let elem of memoryArr; let i = index" class="todo">
       <p>{{i +1}}:</p>
-      <p>Начало: <br>{{elem[0]}}</p>
-      <h3>Продолжительность: <br>{{elem[1]}}</h3>
-      <p>Конец: <br>{{elem[2]}}</p>
+      <p>Начало: {{elem[0]}}</p>
+      <h3>Продолжительность: {{elem[1]}}</h3>
+      <p>Конец: {{elem[2]}}</p>
       <div class="img" (click)="onClear(i)"></div>
     </div>
   </div>

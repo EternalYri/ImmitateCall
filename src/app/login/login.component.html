@@ -1,21 +1,24 @@
-<form [formGroup]="form">
+<div class="main">
+<form [formGroup]="form" class="form">
   <h2>Вход</h2>
   <div class="form__control">
-    <label for="login">Login:</label>
-    <input type="text" formControlName="login">
-    <div class="validation">
+    <label for="login">Login:</label> <br>
+    <input type="text" formControlName="login" class="">
+    <!-- <div class="validation">
       <small>{{form.errors}}</small>
-    </div>
+    </div> -->
   </div>
   <div class="form__control">
-      <label for="password">Password:</label>
+      <label for="password">Password:</label> <br>
     <input type="password" formControlName="password">
-    <div class="validation">
-      <small>{{form.errors}}</small>
-    </div>
+    <!-- <div class="validation" *ngIf="form.get('password').invalid">
+      <small>{{form.invalid}}</small>
+    </div> -->
   </div>
-  <button type="submit" [routerLink]="['/main']" (click)="onLogin()">Войти</button>
+  <button type="submit" [routerLink]="['/main']" (click)="onLogin()" class="btn" [disabled]="form.invalid">Войти</button>
 </form>
-<div>
+<!-- <div>
   {{form.value | json}}
+</div> -->
 </div>
+

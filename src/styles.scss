@@ -2,5 +2,30 @@
   font-family: 'Roboto';
   color: white;
   background-color: #141414;
-  align-items: center;
+}
+button{
+  font-size: 1.2rem;
+  color: black;
+  border-radius: 5px;
+  background-color: #cccccc;
+  margin-top: 40px;
+  width: 200px;
+  height: 40px;
+  margin-left: 35px;
+  &:hover{
+    background-color: rgb(64, 190, 64);
+  }
+}
+input{
+  margin-top: 24px;
+  font-size: 1.2rem;
+  width: 300px;
+  height: 40px;
+  border-radius: 8px;
+  &.ng-invalid.ng-touched{
+    border: 1px solid red;
+  }
+  &.ng-valid.ng-touched{
+    border: 1px solid green;
+  }
 }

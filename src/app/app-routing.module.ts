@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
-  {path: "", component: LoginComponent},
+  {path: "login", component: LoginComponent},
   {path: "main", component: MainComponent, canActivate: [AuthGuard], children:[
     {path: "call", component: CallComponent, canActivate: [AuthGuard]},
   {path: "journal", component: JournalComponent, canActivate: [AuthGuard]},

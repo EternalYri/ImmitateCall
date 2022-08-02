@@ -1,9 +1,9 @@
 <div class="call">
-  <app-button [name]="'Вызов'" (click) ="startCall($event)" class="Sbtn"></app-button>
+  <button (click) ="startCall($event)">Вызов</button>
   <div class="show__time">
     <p>{{minute}} : {{sec}}</p>
   </div>
-  <app-button [name]="'Завершить'" class="btn" (click)="onEnd($event)"></app-button>
+  <button (click)="onEnd($event)">Завершить  </button>
 </div>
 <div>
   {{media}}

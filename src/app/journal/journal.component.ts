@@ -13,7 +13,7 @@ export class JournalComponent implements OnInit {
   memoryArr: any =[];
   startDate: any;
 
-  onShow() {
+  onShow(event: any) {
     let arr: any = [];
       arr[0] = this.show.startDate;
       arr[1] = this.show.time;
@@ -28,11 +28,8 @@ export class JournalComponent implements OnInit {
     }
 
   ngOnInit() {
-    let inject: any = localStorage.getItem('journal')
-    if (JSON.parse(inject) !==null) {
-      this.memoryArr = JSON.parse(inject);
-    } else this.memoryArr = [];
-
+    let inject: any = localStorage.getItem('journal');
+    this.memoryArr = JSON.parse(inject);
   }
 
 }

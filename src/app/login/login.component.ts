@@ -10,6 +10,7 @@ import { AuthService } from '../shared/auth.service';
 })
 export class LoginComponent implements OnInit {
   form!: FormGroup;
+  flag = this.auth.flag;
 
   constructor(public fb: FormBuilder, public auth: AuthService) {}
   ngOnInit(): void {
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   initForm() {
     this.form= this.fb.group({
       login: [null, Validators.required],
-      password: [null, Validators.required]
+      password: [null, [Validators.required, Validators.minLength(8)]]
     })
   }
 

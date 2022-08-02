@@ -2,7 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   .todo{
   width: 600px;
   display: flex;
@@ -10,6 +10,12 @@
   justify-content: space-around;
   border: 2px solid grey;
   margin-top: 24px;
+  border-radius: 8px;
+  &:hover{
+    height: 80px;
+    font-size: 1.1rem;
+    -webkit-transition: 0.3s;
+  }
 }
 .img{
   width: 24px;
