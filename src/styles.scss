@@ -29,3 +29,13 @@ input{
     border: 1px solid green;
   }
 }
+
+@media only screen and (max-width: 320px) {
+  input{
+    width: 190px;
+  }
+  button{
+    width: 150px;
+    font-size: 1rem;
+  }
+}

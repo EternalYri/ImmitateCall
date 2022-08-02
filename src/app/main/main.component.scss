@@ -9,5 +9,18 @@
     margin-left: 40px;
     font-size: 1.5rem;
   }
+}
 
+@media only screen and (max-width: 320px) {
+  .navigate{
+    flex-direction: column;
+    align-items: center;
+    &> :first-child{
+      font-size: 1.1rem;
+    }
+    &> :last-child{
+      margin-left: 0px;
+      font-size: 1.1rem;
+    }
+  }
 }
